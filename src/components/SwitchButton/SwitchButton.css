@@ -1,0 +1,32 @@
+/* src/components/SwitchButton.css */
+
+.switch-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3vh;
+    margin-top: 3vh;
+  }
+  
+  .switch-btn {
+    padding: 6px 12px;
+    margin: 0 4px;
+    font-family: 'Nunito Sans';
+    font-weight: bold;
+    width: 103px;
+    text-align: center;
+    text-decoration: none;
+    color: #333; /* Adjust the font color as required */
+    background-color: #f0f0f0; /* Non-active background color */
+    border: 1px solid #ddd; /* Border color */
+    border-radius: 12px; /* Same as Figma's cornerRadius */
+  }
+  
+  .switch-btn.active {
+    color: #000000; /* Active state font color */
+    font-family: 'Nunito Sans';
+    font-weight: bold;
+    text-align: center;
+    width: 103px;
+    background-color: #FFB700; /* Active state background color */
+  }
+  

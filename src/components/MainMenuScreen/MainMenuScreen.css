@@ -1,0 +1,348 @@
+.title {
+    text-align: center;
+    font-size: 24px;
+    font-family: "Nunito Sans";
+    font-weight: bold;
+    color: #161718;
+
+    padding-left: 10%; /* Adjust padding as needed */
+    padding-right: 10%; /* Adjust padding as needed */
+}
+
+.main-menu {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    height: 90vh;
+    flex-direction: row;
+    overflow: hidden;
+    margin-top: 5vh  !important;
+    margin-bottom: 5vh !important;
+}
+
+.card-component {
+    flex-direction: row;
+    width: 90%;
+    height: 60vh;
+    background-color: #FFFFFF;
+    border: 1px solid #DAD2CD;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin: 0 auto !important; /* Center the card horizontally */
+}
+
+.info-header {
+    height: 5vh !important;
+    display: flex;
+
+    /* align-items: center; */
+  }
+
+  .divider-component {
+    height: 0;
+    border-bottom: 1.5px solid #DAD7CE;
+    width: 80%;
+  }
+  
+  .icon-container {
+    margin-bottom: 10px; /* Adjust spacing between icon/text and divider */
+    width: 4vh;
+    margin-left: 5%;
+    text-align: start;
+  }
+.text-container {
+  margin-bottom: 10px; /* Adjust spacing between icon/text and divider */
+  width: 80%;
+  /* justify-content: flex-start; */
+
+}
+
+  
+.role {
+    /* text-align: start; Align text to the start (left) */
+    font-size: 16px;
+    font-family: "Nunito Sans";
+    font-weight: bold;
+    color: #4D4B57;
+
+    /* width: 90%; */ /* You may adjust width if needed */
+    /* padding-left: 15%; */ /* You can uncomment this line if you need additional left padding */
+}
+.card-logo {
+    /* display: flex; */
+    width: 4vh; /* Example width */
+    height: 4vh; /* Example height */ 
+    margin-left: 3%;
+    color: #6A6F6C;
+  }
+
+.item-title {
+    font-size: 14px;
+    font-family: "Nunito Sans";
+    color: #7A7886;
+    text-align: start;
+
+}
+
+.item-value {
+    font-size: 16px;
+    font-family: "Nunito Sans";
+    color: #161718;
+}
+
+.item-code {
+    width: 100% !important;
+    text-align: start;
+    justify-content: flex-start;
+    font-size: 16px;
+    height: fit-content !important;
+    font-family: "Nunito Sans";
+    color: #161718;
+    padding-right: 10%;
+}
+
+.info-content {
+    
+    padding-left: 5%; /* Adjust padding as needed */
+    padding-right: 5%; /* Adjust padding as needed */
+}
+
+.item-copy {
+    width: 20%;
+    align-items: end;
+    justify-content: end;
+    color: #161718;
+
+}
+
+
+  
+.special-button {
+    width: 80% !important; /* Width as per Figma */
+    height: fit-content; /* Height as per Figma */
+    border-radius: 8px !important; /* borderRadius as per Figma */
+    border-color: #FFB700 !important; /* Fill color as per Figma */
+    border: none; /* Assuming no border is needed as per Figma */
+    background-color: #ffffff !important; /* Fill color as per Figma */
+    color: #121518 !important; /* Text color as per Figma */
+    font-family: 'Nunito Sans' !important; /* textStyle fontFamily */
+    font-size: 14px !important; /* textStyle fontSize */
+    font-weight: normal !important; /* textStyle fontWeight */
+    text-align: center !important; /* Aligned center as per design */
+    line-height: 30px !important; /* Line height to vertically center the text */
+    margin: 0 auto !important;
+    box-shadow: none; /* No box-shadow as per Figma */
+    /* Add a box shadow if necessary to match the design */
+  }
+  
+  /* If needed, adjust styles for the hover, focus, and active states */
+  .special-button:hover,
+  .special-button:focus,
+  .special-button:active {
+    background-color: #FFB700 !important; /* Slightly darker background on interaction */
+  }
+
+  .scan-button {
+    /* flex-direction: column !important; */
+    width: 80% !important; /* Width as per Figma */
+    height: 6vh; /* Height as per Figma */
+    border-radius: 16px !important; /* borderRadius as per Figma */
+    background-color: #D9241D !important; /* Fill color as per Figma */
+    border: none !important; /* Assuming no border is needed as per Figma */
+    box-shadow: none; /* No box-shadow as per Figma */
+    /* Add a box shadow if necessary to match the design */
+  }
+  
+  .text-scan-button {
+    color: #1d1d1d !important; /* Text color as per Figma */
+    font-family: 'Nunito Sans' !important; /* textStyle fontFamily */
+    font-size: 16px !important; /* textStyle fontSize */
+    font-weight: bold !important; /* textStyle fontWeight */
+    text-align: center !important; 
+  }
+  .button-row {
+    /* display: flex; */
+    justify-content: center !important;
+    /* align-items: center; */
+    margin-top: 5% !important;
+    margin-bottom: 5vh !important;
+  }
+  .scan-button {
+    width: 80% !important; /* Width as per Figma */
+    height: 6vh !important; /* Height as per Figma */
+    border-radius: 16px !important; /* borderRadius as per Figma */
+    background-color: #f00800 !important; /* Fill color as per Figma */
+    border: none  !important; /* Assuming no border is needed as per Figma */
+    box-shadow: none; /* No box-shadow as per Figma */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  
+  .button-content {
+    display: flex !important;
+    align-items: center !important;
+  }
+  
+  .scan-logo {
+    width: 24px;  /* Adjust width as needed */
+    height: 24px; /* Adjust height as needed */
+    margin-right: 8px; /* Adjust spacing between logo and text */
+    color: #ffffff;
+  }
+  
+  .text-scan-button {
+    color: #ffffff  !important; /* Text color as per Figma */
+    font-family: 'Nunito Sans' !important; /* textStyle fontFamily */
+    font-size: 16px Im !important; /* textStyle fontSize */
+    font-weight: bold !important; /* textStyle fontWeight */
+    text-align: center!important; /* Aligned center as per design */
+  }
+
+  .info-kpps {
+    display: flex;
+    height: 35vh;
+    flex-direction: column;
+    padding-top: 7%;
+    margin-bottom: 5%;
+  }
+
+.info-col{
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 5vh !important;
+
+}
+  
+
+.copy-button {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    color: #797979;
+    align-items: start;
+
+    width: 25px;
+    height: 25px;
+
+  }
+  .copy-button-true {
+    background-color: transparent;
+    border: none;
+    color: #FFB700;
+    display: flex;
+    align-items: start;
+    width: 20px;
+    height: 20px;
+  }
+  .button-transparent{
+    background-color: transparent;
+    border: none;
+  }
+  .copy-button:focus {
+    outline: none;
+  }
+  
+  .copy-button svg {
+    width: 30px;
+    height: 30px;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .item-title {
+        font-size: 14px;
+    }
+    
+    .item-value {
+        font-size: 16px;
+    }
+    .item-code {
+        font-size: 16px;
+        word-wrap: break-word;
+    }
+    .special-button {
+        font-size: 12px;
+    }
+    .copy-button {
+        width: 20px;
+        height: 20px;
+    
+    }
+
+    .copy-button-true {
+        width: 18px;
+        height: 18px;
+    
+    }
+    
+}
+
+@media only screen and (max-width: 390px) {
+    .item-title {
+        font-size: 10px;
+    }
+    
+    .item-value {
+        font-size: 12px;
+    }
+    .item-code {
+        font-size: 12px;
+        word-wrap: break-word;
+    }
+
+    .special-button {
+        font-size: 12px !important;
+    }
+
+    .copy-button {
+        width: 16px;
+        height: 16px;
+    
+    }
+
+    .copy-button-true {
+        width: 14px;
+        height: 14px;
+    
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .item-title {
+        font-size: 10px;
+    }
+    
+    .item-value {
+        font-size: 12px;
+    }
+    .item-code {
+        font-size: 12px;
+        word-wrap: break-word;
+    }
+
+    .special-button {
+        font-size: 12px !important;
+    }
+
+    .copy-button {
+        width: 16px;
+        height: 16px;
+    
+    }
+
+    .copy-button-true {
+        width: 14px;
+        height: 14px;
+    
+    }
+    .card-component {
+        height: 70vh;
+    }
+    .main-menu {
+        overflow: scroll;
+    }
+}

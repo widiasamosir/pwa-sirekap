@@ -1,0 +1,24 @@
+
+.splashScreen {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background-color: white;
+    overflow: hidden;
+  }
+  
+  .splashScreen_logo {
+    margin-bottom: 2rem; /* Adjust the margin as per the design */
+    width: 80px; /* Adjust width as per the design */
+    height: 83px; /* Adjust height as per the design */
+  }
+  
+  .splashScreen_title {
+    font-size: 2rem; /* Adjust font-size as per the design */
+    font-weight: bold; /* Adjust font-weight as per the design */
+    color: #000;
+    text-align: center;
+    /* If you have a specific font-family from the design, include it here */
+  }

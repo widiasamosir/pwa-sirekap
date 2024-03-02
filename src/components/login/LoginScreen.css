@@ -1,0 +1,123 @@
+/* src/components/LoginScreen.css */
+.logo-title {
+    display: flex;
+    height: 20vh;
+    padding-left: 10%;
+    padding-right: 10%;
+    align-self: center;
+    align-items: center;
+    text-align: center;
+    justify-content: center; 
+}
+
+  
+  /* Apply specific styles from the Figma design like colors, fonts, padding, margin, etc. */
+  .logo {
+    margin-bottom: 1em;
+    height: 7vh;
+
+    /* Add more styling based on the Figma design */
+  }
+.center {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    height: 100vh;
+    flex-direction: row;
+    overflow: hidden;
+  }
+.title {
+    text-align: center;
+    font-size: 16px;
+    font-family: "Nunito Sans";
+    font-weight: bold;
+    color: #161718;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.screen-frame {
+    width: 100vw; /* Change width to 100vw for full width */
+    height: 80vh;
+    background-color: #fff;
+    box-shadow: 0px 0px 75px rgba(155, 155, 155, 0.15);
+    border-radius: 35px;
+    position: relative;
+    padding-top: 10%;   
+}
+
+/* Remove empty ruleset */
+
+
+.button {
+    border-radius: 16px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 50px;
+    width: 80%;
+    background-color: #F5BD41;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    border-width: 0px;
+    border-color: none;
+    color: #161718; /* Add white color to the text */
+    font-size: 18px;
+    font-family: "Nunito Sans";
+    font-weight: bold;
+
+}
+
+  
+  input {
+    margin-bottom: 1em;
+    /* Add input styling based on the Figma design */
+  }
+  
+
+
+.input-field-container {
+    position: relative;
+    display: flex;
+    margin-bottom: 1em;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 5%;
+  }
+
+  .input-logo {
+    position: absolute;
+    /* left: 10px; Adjust the left position of the logo */
+    width: 20px; /* Adjust the width of the logo */
+    height: 20px; /* Adjust the height of the logo */
+  }
+  
+  .input-field {
+    width: 90%;
+    border: none;
+    border-bottom: 1px solid transparent; /* Assuming the underline should not be visible until focused */
+    background-color: transparent;
+    color: #000; /* Black text */
+    font-size: 16px; /* Based on the Figma properties */
+    font-family: "Nunito Sans";
+    outline: none;
+    padding-left: 30px;
+  }
+  
+  .input-field::placeholder {
+    color: rgba(0, 0, 0, 0.8); /* Placeholder text color with reduced opacity */
+  }
+  
+  .input-field:focus + .input-underline {
+    /* Style changes for when the input is focused */
+    border-bottom-color: rgba(0, 0, 0, 0); /* Hide default underline on focus */
+  }
+  
+  .input-underline {
+    height: 0;
+    border-bottom: 1.5px solid #F4BF3A; /* Yellow underline */
+    position: absolute;
+    bottom: 0;
+    width: 80%;
+  }
+  

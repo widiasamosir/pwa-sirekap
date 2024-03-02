@@ -1,0 +1,165 @@
+.detail-title {
+    text-align: center;
+    font-size: 24px;
+    font-family: "Nunito Sans";
+    font-weight: bold;
+    color: #161718;
+
+    padding-left: 10%; /* Adjust padding as needed */
+    padding-right: 10%; /* Adjust padding as needed */
+}
+
+.detail-main-menu {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    height: 100vh;
+    flex-direction: row;
+    overflow: hidden;
+    padding-top: 5vh;
+}
+
+.detail-card-component {
+    flex-direction: row;
+    width: 90%;
+    height: 45vh;
+    background-color: #FFFFFF;
+    border: 1px solid #DAD2CD;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    padding-top: 2%;
+    margin: 0 auto !important; /* Center the card horizontally */
+}
+
+.detail-info-header {
+    height: 4vh;
+    width: 100%;
+    /* Consider removing height if not necessary */
+}
+
+.detail-divider-component {
+    height: 0;
+    border-bottom: 1.5px solid #DAD7CE;
+    /* position: absolute; */
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto !important; /* Center the card horizontally */
+}
+
+.detail-role {
+    text-align: center;
+    justify-content: center;
+    font-size: 16px;
+    font-family: "Nunito Sans";
+    font-weight: bold;
+    color: #4D4B57;
+    width: 90%;
+
+    /* padding-left: 15%; */
+}
+
+
+  
+.detail-special-button {
+    width: 80% !important; /* Width as per Figma */
+    height: fit-content; /* Height as per Figma */
+    border-radius: 8px !important; /* borderRadius as per Figma */
+    border-color: #FFB700 !important; /* Fill color as per Figma */
+    background-color: #ffffff !important; /* Fill color as per Figma */
+    color: #121518 !important; /* Text color as per Figma */
+    font-family: 'Nunito Sans' !important; /* textStyle fontFamily */
+    font-size: 14px !important; /* textStyle fontSize */
+    font-weight: normal !important; /* textStyle fontWeight */
+    text-align: center !important; /* Aligned center as per design */
+    line-height: 30px !important; /* Line height to vertically center the text */
+    margin: 0 auto !important;
+    box-shadow: none; /* No box-shadow as per Figma */
+    /* Add a box shadow if necessary to match the design */
+  }
+  
+  /* If needed, adjust styles for the hover, focus, and active states */
+  .detail-special-button:hover,
+  .detail-special-button:focus,
+  .detail-special-button:active {
+    background-color: #FFB700 !important; /* Slightly darker background on interaction */
+  }
+
+  .detail-scan-button {
+    width: 80% !important; /* Width as per Figma */
+    height: fit-content; /* Height as per Figma */
+    border-radius: 16px !important; /* borderRadius as per Figma */
+    background-color: #D9241D !important; /* Fill color as per Figma */
+    border: none !important; /* Assuming no border is needed as per Figma */
+    color: #FFFFFF !important; /* Text color as per Figma */
+    font-family: 'Nunito Sans' !important; /* textStyle fontFamily */
+    font-size: 16px !important; /* textStyle fontSize */
+    font-weight: bold !important; /* textStyle fontWeight */
+    text-align: center !important; /* Aligned center as per design */
+    line-height: 30px !important; /* Line height to vertically center the text */
+    margin: 0 auto !important;
+    padding-left: 70px !important; /* Adjust padding as needed */
+    box-shadow: none; /* No box-shadow as per Figma */
+    /* Add a box shadow if necessary to match the design */
+  }
+  .detail-button-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 5%;
+  }
+
+  .detail-scan-logo {
+
+    display: flex ;
+    position: absolute;
+    width: 50px; /* Example width */
+    height: 50px; /* Example height */ 
+    color: #ffffff ;
+    margin-right: 70px;
+    z-index: 1;
+  }
+
+    
+.status-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3vh;
+    margin-top: 1vh;
+  }
+  
+  .status-item {
+    margin: 0 10px; /* Space between status items */
+    text-align: center; /* Center label and count */
+  }
+  
+  .status-count {
+    width: 50px; /* Adjust based on screenshot */
+    height: 50px; /* Adjust based on screenshot */
+    line-height: 50px; /* Align text vertically */
+    border-radius: 50%; /* Make it circular */
+    color: white; /* Text color */
+    font-size: 20px; /* Adjust based on design */
+    font-weight: bold;
+    margin-bottom: 5px; /* Space between count and label */
+    display: inline-block;
+  }
+  
+  .status-label {
+    font-size: 16px; /* Adjust based on design */
+    font-family: 'Nunito Sans';
+  }
+  
+  /* You can add specific class names for status items with unique styles */
+  .belum-difoto {
+    background-color: #f28b82; /* Adjust based on design */
+  }
+  
+  .terfoto {
+    background-color: #fbbc04; /* Adjust based on design */
+  }
+  
+  .terverifikasi {
+    background-color: #34a853; /* Adjust based on design */
+  }
