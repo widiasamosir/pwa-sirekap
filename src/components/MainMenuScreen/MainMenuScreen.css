@@ -15,7 +15,7 @@
     /* align-items: center; */
     height: 90vh;
     flex-direction: row;
-    overflow: hidden;
+    overflow: scroll;
     margin-top: 5vh  !important;
     margin-bottom: 5vh !important;
 }
@@ -23,14 +23,15 @@
 .card-component {
     flex-direction: row;
     width: 90%;
-    height: 60vh;
+    height: fit-content;
     background-color: #FFFFFF;
     border: 1px solid #DAD2CD;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 12px;
     padding-top: 2%;
-    padding-bottom: 2%;
-    margin: 0 auto !important; /* Center the card horizontally */
+    padding-bottom: 2vh;
+    margin-left: 5% !important; /* Center the card horizontally */
+    margin-right: 5% !important; /* Center the card horizontally */
 }
 
 .info-header {
@@ -134,6 +135,10 @@
     line-height: 30px !important; /* Line height to vertically center the text */
     margin: 0 auto !important;
     box-shadow: none; /* No box-shadow as per Figma */
+
+    margin-bottom: 2vh !important;
+    margin-left: 10% !important; /* Center the card horizontally */
+    margin-right: 10% !important; /* Center the card horizontally */
     /* Add a box shadow if necessary to match the design */
   }
   
@@ -203,10 +208,10 @@
 
   .info-kpps {
     display: flex;
-    height: 35vh;
+    height: fit-content;
     flex-direction: column;
     padding-top: 7%;
-    margin-bottom: 5%;
+    /* margin-bottom: 5vh !important; */
   }
 
 .info-col{

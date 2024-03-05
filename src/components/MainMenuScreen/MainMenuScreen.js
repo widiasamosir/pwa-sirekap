@@ -24,7 +24,7 @@ const MainMenuScreen = ({ label, onClick }) => {
   
     return (
       <Container className="main-menu">
-        <Col className="main-menu-title">
+        <Col >
           <Row>
             
             <ul className='title'>Integrasi Pemilu</ul>

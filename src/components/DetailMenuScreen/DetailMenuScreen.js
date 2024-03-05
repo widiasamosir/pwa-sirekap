@@ -16,7 +16,7 @@ const DetailMenuScreen = ({ detail, onClick }) => {
       ];
     return (
       <Container className="detail-main-menu">
-        <Col className="main-menu-title">
+        <Col  >
           <Row>
             
             <ul className='detail-title'>Integrasi Pemilu</ul>
