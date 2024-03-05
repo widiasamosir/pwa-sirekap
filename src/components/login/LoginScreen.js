@@ -18,10 +18,10 @@ const LoginScreen = ({ navigation }) => {
                         <img src={require('../../assets/logo-with-text.png')} alt="logo" className='logo'/>
                 </Row>
                 
-                <Row style={{ height: '80vh' }}>
-                    <Col className='screen-frame'>
+                <Row className='screen-frame'>
+                    <Col className='screen-setup'>
                         <Row className='title'>
-                            <h2>Masuk untuk memulai rekapitulasi</h2>
+                            <h2 className='title-font'>Masuk untuk memulai rekapitulasi</h2>
                         </Row>
                         <Row>
                             
@@ -52,7 +52,7 @@ const LoginScreen = ({ navigation }) => {
                             </div>
                         </Row>
                         
-                        <Row >
+                        <Row style={{marginTop : '2vh'}}>
                             <button onClick={handleLogin} className='button'>Login</button>
                         </Row>
                         <Row>

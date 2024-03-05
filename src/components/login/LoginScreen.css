@@ -14,7 +14,7 @@
   /* Apply specific styles from the Figma design like colors, fonts, padding, margin, etc. */
   .logo {
     margin-bottom: 1em;
-    height: 7vh;
+    width: 60%;
 
     /* Add more styling based on the Figma design */
   }
@@ -34,6 +34,16 @@
     color: #161718;
     padding-left: 10%;
     padding-right: 10%;
+    margin-bottom: 2vh;
+}
+.title-font{
+    font-size: 20px;
+    font-family: "Nunito Sans";
+    font-weight: normal;
+    color: #161718;
+    padding-left: 10%;
+    padding-right: 10%;
+
 }
 .screen-frame {
     width: 100vw; /* Change width to 100vw for full width */
@@ -41,10 +51,15 @@
     background-color: #fff;
     box-shadow: 0px 0px 75px rgba(155, 155, 155, 0.15);
     border-radius: 35px;
-    position: relative;
     padding-top: 10%;   
-}
+    
 
+}
+.screen-setup{
+    margin-left: 10%;
+    margin-right: 10%;
+    
+}
 /* Remove empty ruleset */
 
 
@@ -57,8 +72,7 @@
     width: 80%;
     background-color: #F5BD41;
     margin: 0 auto;
-    margin-top: 40px;
-    margin-bottom: 10px;
+    margin-top: 2vh;
     border-width: 0px;
     border-color: none;
     color: #161718; /* Add white color to the text */
@@ -78,11 +92,12 @@
 
 .input-field-container {
     position: relative;
-    display: flex;
+    /* display: flex; */
     margin-bottom: 1em;
-    padding-left: 10%;
-    padding-right: 10%;
+    /* margin-left: 10%;
+    margin-right: 10%; */
     padding-top: 5%;
+    
   }
 
   .input-logo {

@@ -23,18 +23,18 @@ const DetailMenuScreen = ({ detail, onClick }) => {
           </Row>
           <SwitchButton />
           <Row className="detail-card-component">
-            <div className="detail-info-header">
+            <Row >
               <ul className='detail-role'>Pemilihan Presiden dan Wakil Presiden</ul>
               <div className="detail-divider-component" />
-            </div>
+            </Row>
             <Row>
-            <div className="status-container">
-            {status.map((item, index) => (
-                <div key={index} className={"status-item "}>
-                <div className={`status-count ${item.className}`}>{item.count}</div>
-                <div className="status-label">{item.label}</div>
-                </div>
-            ))}
+              <div className="status-container">
+              {status.map((item, index) => (
+                  <div key={index} className={"status-item "}>
+                  <div className={`status-count ${item.className}`}>{item.count}</div>
+                  <div className="status-label">{item.label}</div>
+                  </div>
+              ))}
             </div>
             </Row>
             <Button  className="detail-special-button" onClick={onClick}>
