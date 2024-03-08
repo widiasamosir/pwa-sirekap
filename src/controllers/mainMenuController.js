@@ -1,7 +1,7 @@
 // src/controllers/MainMenuController.js
 import React, { useState, useEffect } from 'react';
-import { getMenuData } from '../models/mainMenuModel';
-import MainMenuView from '../views/MainMenuView';
+import { getMenuData, fetchData } from '../models/mainMenuModel';
+import MainMenuView from '../components/MainMenuScreen/MainMenuScreen';
 
 export const MainMenuController = () => {
   const [sections, setSections] = useState([]);
@@ -28,4 +28,40 @@ export const MainMenuController = () => {
   return (
     <MainMenuView sections={sections} onSectionClick={handleSectionClick} />
   );
+};
+
+export const fetchAndMapData = async () => {
+  try {
+    console.log('Fetching data');
+    const data = await fetchData();
+
+    return mapDataToScreen(data);
+  } catch (error) {
+    console.error(error);
+    // Handle error (e.g., show error message to user)
+    return null;
+  }
+};
+
+const mapDataToScreen = (data) => {
+  return {
+    id: data.id,
+    province: data.province,
+    regency: data.regency,
+    kelurahan: data.village,
+    kecamatan: data.subdistrict,
+    tpsName: data.tpsName,
+    tpsCode: data.tpsCode,
+    totalOriDptMale: data.totalOriDptMale,
+    totalOriDptFemale: data.totalOriDptFemale,
+    totalDptMale: data.totalDptMale,
+    totalDptFemale: data.totalDptFemale,
+    totalDptbMale: data.totalDptbMale,
+    totalDptbFemale: data.totalDptbFemale,
+    totalDpkMale: data.totalDpkMale,
+    totalDpkFemale: data.totalDpkFemale,
+    totalDpt: data.totalDpt,
+    totalDptb: data.totalDptb,
+    totalDpk: data.totalDpk
+  };
 };

@@ -1,4 +1,5 @@
-import React from 'react';
+
+import React, { useState, useEffect } from 'react';
 import './DetailMenuScreen.css'; // Import CSS for styling if needed
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -7,13 +8,27 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import { TbTextScan2 } from "react-icons/tb";
 import SwitchButton from '../SwitchButton/SwitchButton';
+import { fetchAndMapDetailData } from '../../controllers/detailMenuController'; // Import the controller
 
 const DetailMenuScreen = ({ detail, onClick }) => {
-    const status = [
-        { count: 3, label: 'Belum Difoto', className: 'belum-difoto' },
-        { count: 0, label: 'Tercatat', className: 'terfoto' },
-        { count: 0, label: 'Terverifikasi', className: 'terverifikasi' }
-      ];
+
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    const fetchDataAndMap = async () => {
+      const mappedData = await fetchAndMapDetailData();
+      setData(mappedData);
+    };
+
+    fetchDataAndMap();
+  }, []);
+
+  const status = [
+    { count: data?.totalNotUploaded || 0, label: 'Belum Difoto', className: 'belum-difoto' },
+    { count: data?.totalUploaded || 0, label: 'Tercatat', className: 'terfoto' },
+    { count: data?.totalVerified || 0, label: 'Terverifikasi', className: 'terverifikasi' }
+  ];
+
     return (
       <Container className="detail-main-menu">
         <Col  >

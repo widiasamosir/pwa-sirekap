@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useLoginController } from '../../controllers/loginController';
+import React, { useEffect, useState } from 'react';
+import { fetchAndMapData  } from '../../controllers/mainMenuController';
 import './MainMenuScreen.css'; // Import CSS for styling if needed
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -13,7 +13,7 @@ import SwitchButton from '../SwitchButton/SwitchButton';
 const MainMenuScreen = ({ label, onClick }) => {
 
   const [copied, setCopied] = useState(false);
-  const text = '99AXASDHAJSD';
+  // const text = '';
   const copyToClipboard = ({ text, setCopied }) => {
     navigator.clipboard.writeText(text);
     setCopied(true);
@@ -21,6 +21,17 @@ const MainMenuScreen = ({ label, onClick }) => {
       setCopied(false);
     }, 2000);
   };
+  
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    const fetchDataAndMap = async () => {
+      const mappedData = await fetchAndMapData();
+      setData(mappedData);
+    };
+
+    fetchDataAndMap();
+  }, []);
   
     return (
       <Container className="main-menu">
@@ -41,21 +52,21 @@ const MainMenuScreen = ({ label, onClick }) => {
             
           </div>
           <div className="divider-component" />
-
+          {data && (
             <Col className='info-kpps'>
               <Row>
                 <Col xs={5} >
                   <ul className='item-title'>TPS</ul>
-                  <ul className='item-value'>TPS 001</ul>
+                  <ul className='item-value'>{data.tpsName}</ul>
                 </Col>
                 <Col xs={7} className="info-col">
                   <ul className='item-title'>Kode TPS</ul>
                   <Row>
                     <Col xs={9} className="align-items-start">
-                      <ul className='item-code'>99AXASDHASHD</ul>
+                      <ul className='item-code'>{data.tpsCode}</ul>
                     </Col>
                     <Col xs={2} className="align-items-start">
-                    <button  className="button-transparent" onClick={() => copyToClipboard({ text, setCopied })}>
+                    <button className="button-transparent" onClick={() => copyToClipboard({ text: data.tpsCode, setCopied })}>
                       {copied ? <IoCopyOutline className="copy-button-true"/> : <IoCopyOutline className="copy-button"/>}
                     </button>
 
@@ -66,26 +77,27 @@ const MainMenuScreen = ({ label, onClick }) => {
               <Row>
                 <Col xs={5} className="align-items-start ">
                   <ul className='item-title'>Kelurahan</ul>
-                  <ul className='item-value'>Seoul, Korea Selatan</ul>
+                  <ul className='item-value'>{data.kelurahan}</ul>
                 </Col>
                 <Col xs={6} className="align-items-start">
                   <ul className='item-title'>Kecamatan</ul>
-                  <ul className='item-value'>Seoul, Korea Selatan</ul>
+                  <ul className='item-value'>{data.kecamatan}</ul>
                 </Col>
               </Row>
               <Row>
                 <Col xs={5} className="align-items-start">
                   <ul className='item-title'>Kota/Kabupaten</ul>
-                  <ul className='item-value'>Seoul, Korea Selatan</ul>
+                  <ul className='item-value'>{data.regency}</ul>
                 </Col>
                 <Col xs={6} className="align-items-start">
                   <ul className='item-title'>Provinsi</ul>
-                  <ul className='item-value'>Luar Negeri</ul>
+                  <ul className='item-value'>{data.province}</ul>
                 </Col>
               </Row>
 
 
             </Col>
+          )}
             <Button  className="special-button" onClick={onClick}>
               Kelola Daftar Hadir
             </Button>
@@ -95,6 +107,7 @@ const MainMenuScreen = ({ label, onClick }) => {
             <Button className="special-button" onClick={onClick}>
             Waktu Pemungutan Suara
             </Button>  
+          
           </Row>
           <Row className='button-row'>
           <Button variant="warning" className="scan-button" onClick={onClick}>
