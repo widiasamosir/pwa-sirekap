@@ -31,7 +31,7 @@ export const ScannerScreen = () => {
         className="webcam-view"
       />
       <footer className="scanner-footer">
-        <button onClick={goToVerificationScreen}>Skip this Scan</button>
+        <button onClick={goToVerificationScreen}>Skip this Scan (Temporary!!!)</button>
         <h2>Petunjuk</h2>
         <p>Scan Form C berlangsung secara otomatis apabila dokumen telah terdeteksi melalui bingkai dokumen. Mohon tunggu hingga proses selesai.</p>
       </footer>

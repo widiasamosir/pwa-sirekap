@@ -77,7 +77,8 @@
     font-weight: normal !important; /* textStyle fontWeight */
     text-align: center !important; /* Aligned center as per design */
     line-height: 30px !important; /* Line height to vertically center the text */
-    margin: 0 auto !important;
+    /* margin: 0 auto !important; */
+    margin-bottom: 2vh;
     box-shadow: none; /* No box-shadow as per Figma */
     /* Add a box shadow if necessary to match the design */
   }
@@ -128,7 +129,7 @@
     
 .status-container {
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: start;
     margin-bottom: 3vh;
     margin-top: 1vh;
