@@ -1,0 +1,84 @@
+/* VerificationPart1Screen.css */
+.verification-part1-screen {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .row-2 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    width: 90%;
+
+    margin-left: 5%;
+  }
+  
+  .sub-title-2 {
+    color: #3a3d42;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 2vh;
+    margin-left: 5%;
+    width: 90%;
+    font-family: 'Nunito Sans', sans-serif;
+  }
+
+  .form-title {
+    color: #3a3d42;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 2vh;
+    margin-left: 5%;
+    font-family: 'Nunito Sans', sans-serif;
+  }
+
+  .form-title-2 {
+    color: #3a3d42;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    /* margin-left: 5%; */
+    font-family: 'Nunito Sans', sans-serif;
+  }
+
+  .form-title-3 {
+    color: #3a3d42;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    margin-left: 5%;
+    font-family: 'Nunito Sans', sans-serif;
+  }
+
+  .description {
+    color: #3a3d42;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 1vh;
+    font-family: 'Nunito Sans', sans-serif;
+    }
+    
+  .column-2 {
+    flex: 1;
+    /* margin: 0 10px; */
+    min-width: 83px; /* Minimum width of 83 units */
+  }
+
+  .column-div-3 {
+    flex: 1;
+    margin: 0 10px;
+    min-width: 83px; /* Minimum width of 83 units */
+  }
+  
+  .data-title {
+    font-size: 14px;
+    color: #3a3d42;
+    font-family: 'Nunito Sans', sans-serif;
+  }
+
+  
+
+  
+  

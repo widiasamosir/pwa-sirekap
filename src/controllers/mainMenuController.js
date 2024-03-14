@@ -2,9 +2,11 @@
 import React, { useState, useEffect } from 'react';
 import { getMenuData, fetchData } from '../models/mainMenuModel';
 import MainMenuView from '../components/MainMenuScreen/MainMenuScreen';
+import { useNavigate } from 'react-router-dom';
 
 export const MainMenuController = () => {
   const [sections, setSections] = useState([]);
+  
 
   useEffect(() => {
     fetchMenuData();
@@ -14,6 +16,8 @@ export const MainMenuController = () => {
     const data = await getMenuData();
     setSections(data.sections);
   };
+
+  
 
   const handleSectionClick = (index) => {
     // Handle the click event on a section
@@ -29,10 +33,13 @@ export const MainMenuController = () => {
     <MainMenuView sections={sections} onSectionClick={handleSectionClick} />
   );
 };
+export const getKppsRole = () => {
+  const role = localStorage.getItem('role');
+  return role;
+};
 
 export const fetchAndMapData = async () => {
   try {
-    console.log('Fetching data');
     const data = await fetchData();
 
     return mapDataToScreen(data);
@@ -41,6 +48,15 @@ export const fetchAndMapData = async () => {
     // Handle error (e.g., show error message to user)
     return null;
   }
+};
+
+
+export const HandleScan = () => {
+  const navigate = useNavigate();
+  
+  return () => {
+    navigate('/scanner', { replace: false });
+  };
 };
 
 const mapDataToScreen = (data) => {

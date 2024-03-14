@@ -6,21 +6,21 @@ export const useLoginController = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [loginStatus, setLoginStatus] = useState('');
-  const navigate = useNavigate(); // Corrected hook name to useNavigate
+  const navigate = useNavigate();
 
   const handleLogin = async () => {
     try {
-      const response = await modelLogin(username, password);
-      setLoginStatus(response);
-      console.log(response); // Check if response is 'success'
-      // If login is successful, navigate to MainMenuScreen
-      if (response === 'success') {
-        console.log("Login successful"); // Check if this log is printed
-        navigate('/main-menu', { replace: true }); // Corrected navigation syntax
-      }
-      
+      const { userId, tpsCode, role } = await modelLogin(username, password);
+      localStorage.setItem('userId', userId);
+      localStorage.setItem('tpsCode', tpsCode);
+      localStorage.setItem('role', role);
+
+      setLoginStatus('success');
+
+      navigate('/main-menu', { replace: true });
     } catch (error) {
       setLoginStatus(error);
+      console.error('Login failed:', error);
     }
   };
 

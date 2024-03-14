@@ -15,11 +15,11 @@ export const getMenuData = async () => {
 
   export const fetchData = async () => {
     try {
-      const response = await fetch('http://localhost:7000/tps/v1/search-by-id/43', {
+      const cachedTpsCode = localStorage.getItem('tpsCode');
+      const response = await fetch(`http://localhost:7000/tps/v1/search-by-code/${cachedTpsCode}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'
-          // Add any additional headers if required
         }
       });
 

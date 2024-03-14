@@ -15,13 +15,28 @@ export const login = (username, password) => {
       body: JSON.stringify(requestBody)
     })
     .then(response => {
+
       // Check if the response is successful
       if (response.ok) {
-        // Resolve with success message
-        resolve('success');
+        // Parse JSON response
+        return response.json();
       } else {
         // If response is not successful, reject with error message
         reject('Invalid credentials');
+      }
+    })
+    .then(data => {
+      // Check if data is available and complete
+      if (data && data.data.status === 'SUCCESS' && data.data.userId && data.data.tpsCode && data.data.role) {
+        // Resolve with userId and tpsCode
+        resolve({
+          userId: data.data.userId,
+          tpsCode: data.data.tpsCode,
+          role: data.data.role
+        });
+      } else {
+        // If response data is incomplete, reject with error message
+        reject('Incomplete response data');
       }
     })
     .catch(error => {

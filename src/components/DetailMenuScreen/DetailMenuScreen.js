@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import { TbTextScan2 } from "react-icons/tb";
 import SwitchButton from '../SwitchButton/SwitchButton';
-import { fetchAndMapDetailData } from '../../controllers/detailMenuController'; // Import the controller
+import { fetchAndMapDetailData, HandleScan } from '../../controllers/detailMenuController'; // Import the controller
 
 const DetailMenuScreen = ({ detail, onClick }) => {
 
@@ -64,7 +64,7 @@ const DetailMenuScreen = ({ detail, onClick }) => {
           </Row>
           <Row className='detail-button-row'>
           <TbTextScan2 className='detail-scan-logo' />
-           <Button  className="detail-scan-button" onClick={onClick}>
+           <Button  className="detail-scan-button" onClick={HandleScan()}>
               Scan Form-C
             </Button>
           </Row>

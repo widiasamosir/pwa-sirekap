@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { fetchAndMapData  } from '../../controllers/mainMenuController';
+import { fetchAndMapData, HandleScan, getKppsRole  } from '../../controllers/mainMenuController';
 import './MainMenuScreen.css'; // Import CSS for styling if needed
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -13,7 +13,8 @@ import SwitchButton from '../SwitchButton/SwitchButton';
 const MainMenuScreen = ({ label, onClick }) => {
 
   const [copied, setCopied] = useState(false);
-  // const text = '';
+  const [data, setData] = useState(null);
+  const [kppsRole, setKppsRole] = useState(''); 
   const copyToClipboard = ({ text, setCopied }) => {
     navigator.clipboard.writeText(text);
     setCopied(true);
@@ -21,15 +22,14 @@ const MainMenuScreen = ({ label, onClick }) => {
       setCopied(false);
     }, 2000);
   };
-  
-  const [data, setData] = useState(null);
+
 
   useEffect(() => {
     const fetchDataAndMap = async () => {
       const mappedData = await fetchAndMapData();
       setData(mappedData);
     };
-
+    setKppsRole(getKppsRole());
     fetchDataAndMap();
   }, []);
   
@@ -47,7 +47,7 @@ const MainMenuScreen = ({ label, onClick }) => {
               <PiIdentificationCard className='card-logo'/>
             </div>
             <div className="text-container">
-              <ul className='role'>KPPS LN</ul>
+              <ul className='role'>{kppsRole}</ul>
             </div>
             
           </div>
@@ -110,7 +110,7 @@ const MainMenuScreen = ({ label, onClick }) => {
           
           </Row>
           <Row className='button-row'>
-          <Button variant="warning" className="scan-button" onClick={onClick}>
+          <Button variant="warning" className="scan-button" onClick={HandleScan()}>
             <div className="button-content">
               <TbTextScan2 className='scan-logo'/>
               <span className='text-scan-button'>Scan Form-C</span>

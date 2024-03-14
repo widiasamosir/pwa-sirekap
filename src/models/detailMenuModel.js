@@ -2,11 +2,11 @@
 
 export const fetchDetailData = async () => {
     try {
-      const response = await fetch('http://localhost:7000/form-c/v1/details/99AE010001001', {
+      const cachedTpsCode = localStorage.getItem('tpsCode');
+      const response = await fetch(`http://localhost:7000/form-c/v1/details/${cachedTpsCode}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'
-          // Add any additional headers if required
         }
       });
       if (!response.ok) {

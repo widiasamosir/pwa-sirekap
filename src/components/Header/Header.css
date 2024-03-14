@@ -1,0 +1,30 @@
+.scanner-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 1rem;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .back-button {
+    flex: 0 0 auto; /* Do not grow or shrink */
+    cursor: pointer;
+  }
+  
+  .header-title {
+    flex: 1 1 auto; /* Allow to grow and shrink */
+    font-size: 16px;
+    font-weight: bold;
+    color: #3B3B3B;
+    text-align: center; /* Center text horizontally */
+    margin: 0;
+    font-family: "Nunito Sans";
+  }
+  
+  /* An invisible element to keep the header balanced */
+  .header-spacer {
+    flex: 0 0 auto; /* Do not grow or shrink */
+    width: 24px; /* Match the back button's width to maintain symmetry */
+  }
+  

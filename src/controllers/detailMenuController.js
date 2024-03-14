@@ -1,6 +1,6 @@
 
 import { fetchDetailData } from '../models/detailMenuModel';
-
+import { useNavigate } from 'react-router-dom';
 export const fetchAndMapDetailData = async () => {
   try {
     const data = await fetchDetailData();
@@ -10,7 +10,13 @@ export const fetchAndMapDetailData = async () => {
     return null;
   }
 };
-
+export const HandleScan = () => {
+    const navigate = useNavigate();
+    
+    return () => {
+      navigate('/scanner', { replace: false });
+    };
+  };
 const mapDetailData = (data) => {
     return {
       totalNotUploaded: data.totalNotUploaded,

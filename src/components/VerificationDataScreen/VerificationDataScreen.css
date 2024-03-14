@@ -1,0 +1,64 @@
+body, button, input, optgroup, select, textarea {
+    font-family: "Nunito Sans", sans-serif; /* Apply Nunito Sans globally */
+  }
+.verification-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    height: 100vh; /* Adjust height to fill the viewport */
+    background: white;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    overflow: hidden; /* Prevent scrolling if content fits the viewport */
+  }
+  
+  .verification-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    padding: 4vw; /* Use viewport width for padding */
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 4vw;
+    font-family: "Nunito Sans", sans-serif; /* Specify the font-family here if it's different globally */
+    font-weight: 700; /* Bold weight as per your requirement */
+  }
+  
+  .back-button {
+    border-radius: 50%; /* Style back button as a circle */
+    width: 5vw; /* Relative to viewport width */
+    height: 5vw;
+    background: black;
+    margin-right: 4vw;
+  }
+
+  .verification-header h1 {
+    text-align: center;
+    font-size: 4vw; /* Use viewport width for responsive font size */
+  }
+
+ /* VerificationPart1Screen.css */
+
+
+
+  @media (min-width: 640px) {
+    .verification-header h1 {
+      font-size: 2rem; /* Use fixed font size on larger screens */
+    }
+    
+    .verification-footer h2 {
+      font-size: 1.5rem;
+    }
+    
+    .verification-footer p {
+      font-size: 1rem;
+    }
+    
+    .back-button {
+      width: 30px; /* Fixed size on larger screens */
+      height: 30px;
+      margin-right: 16px;
+    }
+  }
+  
