@@ -27,12 +27,13 @@ export const login = (username, password) => {
     })
     .then(data => {
       // Check if data is available and complete
-      if (data && data.data.status === 'SUCCESS' && data.data.userId && data.data.tpsCode && data.data.role) {
+      if (data && data.data.status === 'SUCCESS' && data.data.userId && data.data.tpsCode && data.data.role && data.data.token) {
         // Resolve with userId and tpsCode
         resolve({
           userId: data.data.userId,
           tpsCode: data.data.tpsCode,
-          role: data.data.role
+          role: data.data.role,
+          token: data.data.token
         });
       } else {
         // If response data is incomplete, reject with error message

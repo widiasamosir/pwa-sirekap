@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { fetchAndMapData, HandleScan, getKppsRole  } from '../../controllers/mainMenuController';
+import { useNavigate } from 'react-router-dom';
+import { fetchAndMapData, HandleScan, getKppsRole, MainMenuController  } from '../../controllers/mainMenuController';
 import './MainMenuScreen.css'; // Import CSS for styling if needed
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -10,11 +11,27 @@ import { PiIdentificationCard } from "react-icons/pi";
 import Button from 'react-bootstrap/Button';
 import { TbTextScan2 } from "react-icons/tb";
 import SwitchButton from '../SwitchButton/SwitchButton';
+import ConfirmDialogScreen from '../ConfirmDialog/ConfirmDialogScreen';
 const MainMenuScreen = ({ label, onClick }) => {
 
   const [copied, setCopied] = useState(false);
   const [data, setData] = useState(null);
   const [kppsRole, setKppsRole] = useState(''); 
+  const [showConfirmDialog, setShowConfirmDialog] = useState(false);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.clear();
+    navigate('/', { replace: true });
+  };
+
+  const handleConfirm = () => {
+    handleLogout();
+  };
+
+  const handleCancel = () => {
+    setShowConfirmDialog(false);
+  };
   const copyToClipboard = ({ text, setCopied }) => {
     navigator.clipboard.writeText(text);
     setCopied(true);
@@ -116,8 +133,20 @@ const MainMenuScreen = ({ label, onClick }) => {
               <span className='text-scan-button'>Scan Form-C</span>
             </div>
           </Button>
+          <Button variant="warning" className="logout-button" onClick={() => setShowConfirmDialog(true)}>
+            <div className="button-content">
+              <TbTextScan2 className='scan-logo'/>
+              <span className='text-scan-button'>Logout</span>
+            </div>
+          </Button>
         </Row>
-
+        {showConfirmDialog && (
+        <ConfirmDialogScreen 
+        title="Are you sure you want to logout"
+        cancelButtonText="No"
+        submitButtonText="Yes"
+        onConfirm={handleConfirm} onCancel={handleCancel}  />
+      )}      
             
         </Col>
       </Container>

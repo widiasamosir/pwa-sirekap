@@ -117,7 +117,11 @@ const VerificationDataScreen = () => {
         
       )}
       {showConfirmDialog && (
-        <ConfirmDialogScreen onConfirm={handleConfirm} onCancel={handleCancel} />
+        <ConfirmDialogScreen 
+        title="Are you sure you want to delete this item?"
+        cancelButtonText="Cancel"
+        submitButtonText="Submit"
+        onConfirm={handleConfirm} onCancel={handleCancel}  />
       )}
       <footer className="scanner-footer">
         <h2>Petunjuk</h2>

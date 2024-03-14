@@ -16,10 +16,13 @@ export const getMenuData = async () => {
   export const fetchData = async () => {
     try {
       const cachedTpsCode = localStorage.getItem('tpsCode');
+      const token = localStorage.getItem('token');
+
       const response = await fetch(`http://localhost:7000/tps/v1/search-by-code/${cachedTpsCode}`, {
         method: 'GET',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
         }
       });
 

@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 export const MainMenuController = () => {
   const [sections, setSections] = useState([]);
-  
+
 
   useEffect(() => {
     fetchMenuData();
@@ -17,7 +17,6 @@ export const MainMenuController = () => {
     setSections(data.sections);
   };
 
-  
 
   const handleSectionClick = (index) => {
     // Handle the click event on a section
@@ -61,23 +60,23 @@ export const HandleScan = () => {
 
 const mapDataToScreen = (data) => {
   return {
-    id: data.id,
-    province: data.province,
-    regency: data.regency,
-    kelurahan: data.village,
-    kecamatan: data.subdistrict,
-    tpsName: data.tpsName,
-    tpsCode: data.tpsCode,
-    totalOriDptMale: data.totalOriDptMale,
-    totalOriDptFemale: data.totalOriDptFemale,
-    totalDptMale: data.totalDptMale,
-    totalDptFemale: data.totalDptFemale,
-    totalDptbMale: data.totalDptbMale,
-    totalDptbFemale: data.totalDptbFemale,
-    totalDpkMale: data.totalDpkMale,
-    totalDpkFemale: data.totalDpkFemale,
-    totalDpt: data.totalDpt,
-    totalDptb: data.totalDptb,
-    totalDpk: data.totalDpk
+    id: data.id || '-',
+    province: data.province || '-',
+    regency: data.regency || '-',
+    kelurahan: data.village || '-',
+    kecamatan: data.subdistrict || '-',
+    tpsName: data.tpsName || '-',
+    tpsCode: data.tpsCode || '-',
+    totalOriDptMale: data.totalOriDptMale || '-',
+    totalOriDptFemale: data.totalOriDptFemale || '-',
+    totalDptMale: data.totalDptMale || '-',
+    totalDptFemale: data.totalDptFemale || '-',
+    totalDptbMale: data.totalDptbMale || '-',
+    totalDptbFemale: data.totalDptbFemale || '-',
+    totalDpkMale: data.totalDpkMale || '-',
+    totalDpkFemale: data.totalDpkFemale || '-',
+    totalDpt: data.totalDpt || '-',
+    totalDptb: data.totalDptb || '-',
+    totalDpk: data.totalDpk || '-'
   };
 };

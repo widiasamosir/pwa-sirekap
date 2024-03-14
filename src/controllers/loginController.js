@@ -10,10 +10,11 @@ export const useLoginController = () => {
 
   const handleLogin = async () => {
     try {
-      const { userId, tpsCode, role } = await modelLogin(username, password);
+      const { userId, tpsCode, role, token } = await modelLogin(username, password);
       localStorage.setItem('userId', userId);
       localStorage.setItem('tpsCode', tpsCode);
       localStorage.setItem('role', role);
+      localStorage.setItem('token', token);
 
       setLoginStatus('success');
 

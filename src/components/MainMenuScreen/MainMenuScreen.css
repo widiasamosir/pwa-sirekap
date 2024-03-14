@@ -185,6 +185,20 @@
     justify-content: center !important;
     align-items: center !important;
   }
+
+  .logout-button {
+    width: 80% !important; /* Width as per Figma */
+    height: 6vh !important; /* Height as per Figma */
+    margin-top: 2vh !important;
+    border-radius: 16px !important; /* borderRadius as per Figma */
+    color: #000000 !important; /* Fill color as per Figma */
+    background: #DAD7CE !important; /* Text color as per Figma */
+    border: none  !important; /* Assuming no border is needed as per Figma */
+    box-shadow: none; /* No box-shadow as per Figma */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
   
   .button-content {
     display: flex !important;
