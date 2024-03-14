@@ -5,9 +5,11 @@ export const login = (username, password) => {
       username: username,
       password: password
     };
-
+    const BASE_URL = 'https://localtunnel-ms.loca.lt';
+    const ENDPOINT = '/user/v1/login';
+    console.log('BASE_URL', BASE_URL);
     // Make the HTTP POST request
-    fetch('http://localhost:7000/user/v1/login', {
+    fetch(`${BASE_URL}${ENDPOINT}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

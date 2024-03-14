@@ -1,11 +1,13 @@
 // detailMenuModel.js
 
 export const fetchDetailData = async () => {
+  const BASE_URL = 'https://localtunnel-ms.loca.lt'
+  const ENDPOINT = '/form-c/v1/details/';
     try {
       const cachedTpsCode = localStorage.getItem('tpsCode');
       const token = localStorage.getItem('token');
 
-      const response = await fetch(`http://localhost:7000/form-c/v1/details/${cachedTpsCode}`, {
+      const response = await fetch(`${BASE_URL}${ENDPOINT}${cachedTpsCode}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

@@ -14,11 +14,14 @@ export const getMenuData = async () => {
   };
 
   export const fetchData = async () => {
+  const BASE_URL = 'https://localtunnel-ms.loca.lt'
+  const ENDPOINT = '/tps/v1/search-by-code/';
+
     try {
       const cachedTpsCode = localStorage.getItem('tpsCode');
       const token = localStorage.getItem('token');
 
-      const response = await fetch(`http://localhost:7000/tps/v1/search-by-code/${cachedTpsCode}`, {
+      const response = await fetch(`${BASE_URL}${ENDPOINT}${cachedTpsCode}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
