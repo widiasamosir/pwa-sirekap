@@ -20,9 +20,9 @@ const VerificationPart1Screen = ({ formData, setFormData }) => {
       Data Pemilih
       </div>
       
-      <div className="row">
+      <div className="row-form">
       
-        <div className="column">
+        <div className="column-form">
           <div className='data-title'>Laki-Laki</div>
           <input
             type="number"
@@ -31,7 +31,7 @@ const VerificationPart1Screen = ({ formData, setFormData }) => {
             onChange={handleChange}
           />
         </div>
-        <div className="column">
+        <div className="column-form">
           <div className='data-title'>Perempuan</div>
           <input
             type="number"
@@ -40,7 +40,7 @@ const VerificationPart1Screen = ({ formData, setFormData }) => {
             onChange={handleChange}
           />
         </div>
-        <div className="column">
+        <div className="column-form">
           <div className='data-title'>Total</div>
           <input
             type="number"
@@ -59,8 +59,8 @@ const VerificationPart1Screen = ({ formData, setFormData }) => {
       </div>
       
 
-      <div className="row">
-        <div className="column">
+      <div className="row-form">
+        <div className="column-form">
           <div className='data-title'>Laki-Laki</div>
           <input
             type="number"
@@ -69,7 +69,7 @@ const VerificationPart1Screen = ({ formData, setFormData }) => {
             onChange={handleChange}
           />
         </div>
-        <div className="column">
+        <div className="column-form">
           <div className='data-title'>Perempuan</div>
           <input
             type="number"
@@ -78,7 +78,7 @@ const VerificationPart1Screen = ({ formData, setFormData }) => {
             onChange={handleChange}
           />
         </div>
-        <div className="column">
+        <div className="column-form">
           <div className='data-title'>Total</div>
           <input
             type="number"
@@ -92,8 +92,8 @@ const VerificationPart1Screen = ({ formData, setFormData }) => {
       <div className="form-title-3">
       DPTb
       </div>
-      <div className="row">
-        <div className="column">
+      <div className="row-form">
+        <div className="column-form">
           <div className='data-title'>Laki-Laki</div>
           <input
             type="number"
@@ -102,7 +102,7 @@ const VerificationPart1Screen = ({ formData, setFormData }) => {
             onChange={handleChange}
           />
         </div>
-        <div className="column">
+        <div className="column-form">
           <div className='data-title'>Perempuan</div>
           <input
             type="number"
@@ -111,7 +111,7 @@ const VerificationPart1Screen = ({ formData, setFormData }) => {
             onChange={handleChange}
           />
         </div>
-        <div className="column">
+        <div className="column-form">
           <div className='data-title'>Total</div>
           <input
             type="number"
@@ -125,8 +125,8 @@ const VerificationPart1Screen = ({ formData, setFormData }) => {
       <div className="form-title-3">
       DPTb
       </div>
-      <div className="row">
-        <div className="column">
+      <div className="row-form">
+        <div className="column-form">
           <div className='data-title'>Laki-Laki</div>
           <input
             type="number"
@@ -135,7 +135,7 @@ const VerificationPart1Screen = ({ formData, setFormData }) => {
             onChange={handleChange}
           />
         </div>
-        <div className="column">
+        <div className="column-form">
           <div className='data-title'>Perempuan</div>
           <input
             type="number"
@@ -144,7 +144,7 @@ const VerificationPart1Screen = ({ formData, setFormData }) => {
             onChange={handleChange}
           />
         </div>
-        <div className="column">
+        <div className="column-form">
           <div className='data-title'>Total</div>
           <input
             type="number"

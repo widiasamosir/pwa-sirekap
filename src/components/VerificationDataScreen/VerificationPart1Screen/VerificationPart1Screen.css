@@ -4,7 +4,7 @@
     flex-wrap: wrap;
   }
   
-  .row {
+  .row-form {
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 20px;
@@ -60,7 +60,7 @@
     font-family: 'Nunito Sans', sans-serif;
     }
     
-  .column {
+  .column-form {
     flex: 1;
     margin: 0 10px;
     min-width: 83px; /* Minimum width of 83 units */
@@ -72,7 +72,7 @@
     font-family: 'Nunito Sans', sans-serif;
   }
   
-  .column input {
+  .column-form input {
     width: 100%;
     margin-top: 8px;
     padding: 10px;

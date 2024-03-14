@@ -8,6 +8,8 @@ import VerificationController from '../../controllers/verificationDataController
 import VerificationModel from '../../models/verificationDataModel';
 import Header from '../Header/Header';
 import Button from 'react-bootstrap/Button';
+import ConfirmDialogScreen from '../ConfirmDialog/ConfirmDialogScreen';
+import { useNavigate } from 'react-router-dom';
 
 const VerificationDataScreen = () => {
  
@@ -50,6 +52,10 @@ const VerificationDataScreen = () => {
   const { formData, setFormData } = VerificationModel();
   const [step, setStep] = useState(1);
   const controller = VerificationController();
+
+  const [showConfirmDialog, setShowConfirmDialog] = useState(false);
+
+  
   const nextStep = () => {
     if (controller.validateStep(step, formData)) {
       setStep(step + 1);
@@ -61,13 +67,26 @@ const VerificationDataScreen = () => {
   };
 
   const handleSubmit = () => {
-    formData.step1 = formData1;
-    formData.step2 = formData2;
-    formData.step3 = formData3;
-    formData.step4 = formDataFinal;
-    if (window.confirm("Are you sure the data is correct?")) {
-        controller.submitForm(formData);
-    }
+    setShowConfirmDialog(true);
+  };
+  const navigate = useNavigate();
+
+  const handleConfirm = () => {
+    const formData = {
+      step1: formData1,
+      step2: formData2,
+      step3: formData3,
+      step4: formDataFinal
+    };
+
+    controller.submitForm(formData);
+    setShowConfirmDialog(false);
+    
+    navigate('/main-menu', { replace: true });
+  };
+
+  const handleCancel = () => {
+    setShowConfirmDialog(false);
   };
 
   return (
@@ -95,6 +114,10 @@ const VerificationDataScreen = () => {
       
       {step === 4 && (
         <Button className="action-button" onClick={handleSubmit}>Kirim</Button>
+        
+      )}
+      {showConfirmDialog && (
+        <ConfirmDialogScreen onConfirm={handleConfirm} onCancel={handleCancel} />
       )}
       <footer className="scanner-footer">
         <h2>Petunjuk</h2>

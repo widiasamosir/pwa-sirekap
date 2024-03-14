@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 
 const VerificationDataController = () => {
     const validateStep = (step, formData) => {
@@ -8,7 +9,10 @@ const VerificationDataController = () => {
     };
   
     const submitForm = (formData) => {
-      console.log('Form Data:', formData);
+      
+        console.log('Form Data:', formData);
+        
+
       // Submit form data to the server
     };
   
