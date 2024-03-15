@@ -1,0 +1,65 @@
+.confirm-dialog-screen {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.4);
+  }
+  
+  .dialog-box {
+    background: white;
+    border-radius: 13px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    padding: 20px;
+    max-width: 90%;
+  }
+  
+  .dialog-title {
+    text-align: center;
+    font-size: 18px;
+    color: #000;
+    font-family: 'Nunito Sans', sans-serif !important;
+    margin-bottom: 24px;
+  }
+  
+  .options-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .option-row {
+    margin-bottom: 10px;
+  }
+  
+  .option-button {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-family: 'Nunito Sans', sans-serif !important;
+    color: #fff;
+    background-color: #007bff; /* Change color as needed */
+    cursor: pointer;
+    z-index: 999;
+
+  }
+  
+  .cancel-button {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-family: 'Nunito Sans', sans-serif !important;
+    color: #fff;
+    background-color: #ff3b30;
+    cursor: pointer;
+    z-index: 999;
+  }
+  
+  .cancel-button:hover,
+  .option-button:hover {
+    opacity: 0.8;
+  }
+  

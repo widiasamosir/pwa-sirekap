@@ -14,7 +14,7 @@ export const getMenuData = async () => {
   };
 
   export const fetchData = async () => {
-  const BASE_URL = 'https://localtunnel-ms.loca.lt'
+  const BASE_URL = 'http://localhost:7000'
   const ENDPOINT = '/tps/v1/search-by-code/';
 
     try {

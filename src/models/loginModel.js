@@ -5,7 +5,7 @@ export const login = (username, password) => {
       username: username,
       password: password
     };
-    const BASE_URL = 'https://localtunnel-ms.loca.lt';
+    const BASE_URL = 'http://localhost:7000';
     const ENDPOINT = '/user/v1/login';
     console.log('BASE_URL', BASE_URL);
     // Make the HTTP POST request

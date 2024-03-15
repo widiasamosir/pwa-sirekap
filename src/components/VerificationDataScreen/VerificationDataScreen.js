@@ -12,7 +12,7 @@ import ConfirmDialogScreen from '../ConfirmDialog/ConfirmDialogScreen';
 import { useNavigate } from 'react-router-dom';
 
 const VerificationDataScreen = () => {
- 
+  const currentPage = localStorage.getItem('currentlyScanPage');
   const [formData1, setFormData1] = useState({
     input1: '',
     input2: '',
@@ -81,17 +81,21 @@ const VerificationDataScreen = () => {
 
     controller.submitForm(formData);
     setShowConfirmDialog(false);
-    
+    localStorage.setItem(`isScanPage${currentPage}`, true);
+    localStorage.removeItem('currentlyScanPage');
     navigate('/main-menu', { replace: true });
   };
 
   const handleCancel = () => {
     setShowConfirmDialog(false);
   };
+  const handleGoBack = () => {
+    navigate("/", {replace: true}); // Go back to the previous route
+};
 
   return (
     <div className="verification-screen">
-        <Header title="Verifikasi Data"  />
+        <Header title="Verifikasi Data" onNavigateBack={handleGoBack} />
 
       {step === 1 && (
         <VerificationPart1Screen formData={formData1} setFormData={setFormData1} />      )}

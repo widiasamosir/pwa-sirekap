@@ -5,6 +5,7 @@ import MainMenuScreen from './components/MainMenuScreen/MainMenuScreen';
 import DetailMenuScreen from './components/DetailMenuScreen/DetailMenuScreen';
 import ScannerScreen from './components/ScannerScreen/ScannerScreen';
 import VerificationDataScreen from './components/VerificationDataScreen/VerificationDataScreen';
+import DetailPemilihanScreen from './components/DetailPemilihanScreen/DetailPemilihanScreen';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -22,6 +23,7 @@ function App() {
         <Route path="/detail-menu" element={<DetailMenuScreen />} />
         <Route path="/scanner" element={<ScannerScreen />} />
         <Route path="/verification" element={<VerificationDataScreen />} />
+        <Route path="/detail-pemilihan" element={<DetailPemilihanScreen />} />
       </Routes>
     </BrowserRouter>
   );

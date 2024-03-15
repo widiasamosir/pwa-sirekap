@@ -1,0 +1,39 @@
+.swipe-button {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  justify-content: center; /* Align handle start */
+  background-color: #0a6f3f;
+  color: #fff;
+  border-radius: 6px;
+  padding: 8px;
+  position: relative; /* So handle can be absolutely positioned within */
+  overflow: hidden; /* Keep the handle within the button bounds */
+  user-select: none;
+  cursor: ew-resize; /* Indicates the sliding action */
+}
+
+.handle {
+  width: 30px; /* Width of the handle */
+  height: 100%; /* Full height of the button */
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #ffffff; /* White handle */
+  border-radius: 6px 0 0 6px; /* Rounded on the left side */
+  cursor: pointer;
+  transition: transform 0.3s ease; /* Smooth transition for the handle sliding */
+}
+
+.swipe-button span {
+  margin-left: 40px; /* Make space for the handle */
+  transition: opacity 0.3s ease;
+}
+
+.swipe-button.swiped .handle {
+  background-color: #088033; /* Dark green like the button after swipe */
+}
+
+.swipe-button.swiped span {
+  opacity: 0.5; /* Fade text when swiped */
+}

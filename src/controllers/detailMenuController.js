@@ -25,3 +25,11 @@ const mapDetailData = (data) => {
       // Add more mappings as needed
     };
   };
+
+  export const GoToDetailPemilihan = () => {
+    const navigate = useNavigate();
+    
+    return () => {
+      navigate('/detail-pemilihan', { replace: false });
+    };
+  };

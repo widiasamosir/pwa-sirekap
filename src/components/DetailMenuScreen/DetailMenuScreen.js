@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import { TbTextScan2 } from "react-icons/tb";
 import SwitchButton from '../SwitchButton/SwitchButton';
-import { fetchAndMapDetailData, HandleScan } from '../../controllers/detailMenuController'; // Import the controller
+import { fetchAndMapDetailData, HandleScan, GoToDetailPemilihan } from '../../controllers/detailMenuController'; // Import the controller
 
 const DetailMenuScreen = ({ detail, onClick }) => {
 
@@ -52,7 +52,7 @@ const DetailMenuScreen = ({ detail, onClick }) => {
               ))}
             </div>
             </Row>
-            <Button  className="detail-special-button" onClick={onClick}>
+            <Button  className="detail-special-button" onClick={GoToDetailPemilihan()}>
             Lihat Detail Pemilihan
             </Button>
             <Button className="detail-special-button" onClick={onClick}>

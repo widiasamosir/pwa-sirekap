@@ -6,7 +6,7 @@ import BackButton from '../BackButton/BackButton';
 const Header = ({ title, onNavigateBack }) => {
   return (
     <header className="scanner-header">
-      <BackButton className="back-button" size="24px" onClick={onNavigateBack} />
+      <BackButton className="back-button" size="24px" handleGoBack={onNavigateBack} />
       <h1 className="header-title">{title}</h1>
       <div className="header-spacer"></div> {/* Spacer element */}
     </header>

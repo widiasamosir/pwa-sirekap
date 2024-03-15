@@ -1,0 +1,183 @@
+.detail-pemilihan-screen {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    max-width: 100%;
+    background: white;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    /* overflow: hidden; */
+}
+
+.row-dp {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    width: 90%;
+
+    margin-left: 5%;
+  }
+
+.column-card {
+    flex: 1;
+    /* margin: 0 10px; */
+    min-width: 83px; /* Minimum width of 83 units */
+  }
+.row-title {
+    font-size: 14px;
+    
+    color: #3a3d42;
+    font-family: 'Nunito Sans', sans-serif;
+  }
+.checklist {
+  font-size: 14px;
+  color: #6A6F6C;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: normal;
+  margin: 8px;
+}
+.row-check {
+  display: flex;
+  align-items: center;
+}
+.card {
+    width: 100%;
+    margin-top: 8px;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(218, 215, 206, 1);
+    border-radius: 8px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .election-info-card {
+    background-color: #ffffff;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 2vh;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #d9d9d9;
+  }
+  
+  .card-header {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #39424d;
+    margin-bottom: 8px;
+  }
+  
+  .election-info-separator {
+    border-bottom: 1px solid #d9d9d9;
+    margin-bottom: 16px;
+  }
+  
+  .info-row {
+    display: flex;
+    flex-direction: column; /* Changed from "row" to "column" */
+    align-items: flex-start;
+    margin-bottom: 16px;
+  }
+  
+  .info-label {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    color: #7a7a7a;
+    margin-bottom: 4px; /* Added margin to separate label from value */
+  }
+
+  .flex-row {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .info-value {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #121212;
+  }
+
+  .info-block {
+    flex: 1; /* Allow each block to take equal width */
+  }
+  .action-separator {
+    height: 1px; /* Defines the thickness of the separator */
+    background-color: #ccc; /* The color of the separator, adjust as needed */
+    flex-grow: 1; /* Allows the separator to expand and fill the available space */
+    margin: 0 10px; /* Space between the icon and separator */
+  }
+  .action-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    margin-top: 20px; /* Space between this card and the above one */
+    padding: 5%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #d9d9d9;
+    display: flex;
+    justify-content: space-between; /* Position the icons and button on opposite sides */
+    /* align-items: center; */
+    flex-direction: column;
+  }
+  
+  .actions {
+    
+  }
+  
+.action-icons {
+  display: flex; /* Align icons in a row */
+  align-items: center;
+  padding: 2%;
+  justify-content: center; /* Center icons horizontally */
+  margin-bottom: 16px; /* Space between icons and the detail button */
+}
+
+.action-icon {
+  /* Placeholder for each action icon */
+  font-size: 30px; /* Example size, design your icons accordingly */
+}
+  
+  .action-detail {
+    display: flex; /* Ensures that detail content is also in a flex row */
+  justify-content: center; /* Centers the button */
+  margin-top: 16px; 
+  }
+  
+  .detail-button {
+    background-color: transparent;
+    border: 1px solid #ee6c4d; /* Example color taken from your screenshot */
+    border-radius: 8px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: normal;
+    width: 90%;
+    color: #121212; /* Example text color */
+  }
+  
+  .detail-button:hover {
+    background-color: #ee6c4d; /* Darken button on hover */
+    color: #ffffff;
+  }
+
+  .action-card-header {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #3a3a3a;
+    margin-bottom: 16px; /* Add space below the header */
+  }
+
+  @media (max-width: 300px) {
+    .flex-row {
+      flex-direction: column; /* Stack on smaller screens */
+    }
+    
+    .info-block:not(:last-child) {
+      margin-bottom: 16px; /* Space between blocks on smaller screens */
+    }
+  }
