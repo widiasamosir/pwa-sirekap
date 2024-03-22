@@ -1,5 +1,4 @@
-// VerificationDataScreen.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import VerificationPart1Screen from './VerificationPart1Screen/VerificationPart1Screen';
 import VerificationPart2Screen from './VerificationPart2Screen/VerificationPart2Screen';
 import VerificationPart3Screen from './VerificationPart3Screen/VerificationPart3Screen';
@@ -13,6 +12,8 @@ import { useNavigate } from 'react-router-dom';
 
 const VerificationDataScreen = () => {
   const currentPage = localStorage.getItem('currentlyScanPage');
+
+  // Initialize form data based on currentPage
   const [formData1, setFormData1] = useState({
     input1: '',
     input2: '',
@@ -49,84 +50,96 @@ const VerificationDataScreen = () => {
     input2: '',
     input3: '',
   });
+
+  useEffect(() => {
+    // Load form data from localStorage based on currentPage
+    const savedFormData = JSON.parse(localStorage.getItem(`formData${currentPage}`));
+    if (savedFormData) {
+      setFormData1(savedFormData.step1 || formData1);
+      setFormData2(savedFormData.step2 || formData2);
+      setFormData3(savedFormData.step3 || formData3);
+      setFormDataFinal(savedFormData.step4 || formDataFinal);
+    }
+  }, [currentPage]);
+
   const { formData, setFormData } = VerificationModel();
   const [step, setStep] = useState(1);
   const controller = VerificationController();
-
   const [showConfirmDialog, setShowConfirmDialog] = useState(false);
+  const [showSubmitAllDialog, setShowSubmitAllDialog] = useState(false); // New state for submit all data dialog
+  const navigate = useNavigate();
 
-  
   const nextStep = () => {
     if (controller.validateStep(step, formData)) {
-      setStep(step + 1);
+      // Show the confirm dialog before proceeding to the next step
+      setShowConfirmDialog(true);
     }
   };
 
   const prevStep = () => {
-    setStep(step - 1);
+    localStorage.removeItem('currentlyScanPage');
+    navigate(-1, { replace: true });
   };
 
-  const handleSubmit = () => {
-    setShowConfirmDialog(true);
-  };
-  const navigate = useNavigate();
 
   const handleConfirm = () => {
+    // Save form data to localStorage
     const formData = {
       step1: formData1,
       step2: formData2,
       step3: formData3,
       step4: formDataFinal
     };
-
-    controller.submitForm(formData);
+    localStorage.setItem(`formData${currentPage}`, JSON.stringify(formData));
+    
+    // Hide the confirmation dialog
     setShowConfirmDialog(false);
-    localStorage.setItem(`isScanPage${currentPage}`, true);
     localStorage.removeItem('currentlyScanPage');
     navigate('/main-menu', { replace: true });
+    
   };
 
   const handleCancel = () => {
     setShowConfirmDialog(false);
+    localStorage.removeItem('currentlyScanPage');
   };
+
   const handleGoBack = () => {
-    navigate("/", {replace: true}); // Go back to the previous route
-};
+    localStorage.removeItem('currentlyScanPage');
+    navigate(-1, { replace: true }); // Go back to the previous route
+    
+  };
+
 
   return (
     <div className="verification-screen">
-        <Header title="Verifikasi Data" onNavigateBack={handleGoBack} />
+      <Header title="Verifikasi Data" onNavigateBack={handleGoBack} />
 
-      {step === 1 && (
-        <VerificationPart1Screen formData={formData1} setFormData={setFormData1} />      )}
-      {step === 2 && (
-        <VerificationPart2Screen formData={formData2} setFormData={setFormData2} />      )}
-      {step === 3 && (
-         <VerificationPart3Screen formData={formData3} setFormData={setFormData3} />      )}
-      {step === 4 && (
-        <FinalVerificationScreen formData={formDataFinal} setFormData={setFormDataFinal} />      )}
-        {step !== 1 && (
-        <Button className="action-back-button" onClick={prevStep}>Kembali</Button>
-        
+      {currentPage === '1' && (
+        <>
+          <VerificationPart1Screen formData={formData1} setFormData={setFormData1} />
+          <VerificationPart2Screen formData={formData2} setFormData={setFormData2} />
+        </>
       )}
-      {step !== 4 && step === 1 && (
-        <Button className="action-button-center" onClick={nextStep}>Lanjut</Button>
-    )}
-    {step !== 4 && step !== 1 && (
-        <Button className="action-button" onClick={nextStep}>Lanjut</Button>
-    )}
-      
-      {step === 4 && (
-        <Button className="action-button" onClick={handleSubmit}>Kirim</Button>
-        
+      {currentPage === '2' && (
+        <VerificationPart3Screen formData={formData3} setFormData={setFormData3} />
       )}
+      {currentPage === '3' && (
+        <FinalVerificationScreen formData={formDataFinal} setFormData={setFormDataFinal} />
+      )}
+
+        <Button className="action-back-button" onClick={prevStep}>Kembali</Button> 
+        <Button className="action-button" onClick={nextStep}>Kirim</Button>
       {showConfirmDialog && (
-        <ConfirmDialogScreen 
-        title="Are you sure you want to delete this item?"
-        cancelButtonText="Cancel"
-        submitButtonText="Submit"
-        onConfirm={handleConfirm} onCancel={handleCancel}  />
+        <ConfirmDialogScreen
+          title="Are you sure you want to proceed this data?"
+          cancelButtonText="Cancel"
+          submitButtonText="Yes"
+          onConfirm={handleConfirm}
+          onCancel={handleCancel}
+        />
       )}
+     
       <footer className="scanner-footer">
         <h2>Petunjuk</h2>
         <p>Verifikasi data yang ditampilkan dengan data pada form-c yang sebelumnya diupload.</p>

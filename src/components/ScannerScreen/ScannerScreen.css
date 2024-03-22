@@ -77,6 +77,23 @@ body, button, input, optgroup, select, textarea {
     font-weight: 400; /* Regular weight for paragraph text */
 
   }
+
+  .action-button-scanner {
+    border-radius: 8px !important;
+    border: 1px solid rgba(240, 146, 80, 1) !important;
+    background-color: rgba(240, 146, 80, 1) !important;
+    color: #302f2f !important; 
+    padding: 9px 60px !important;
+    margin-top: 3vh !important;
+    margin-bottom: 2vh !important;
+    /* margin: 0 auto !important; */
+    margin-left: 10% !important;
+    align-self: center !important;
+    width: 80% !important;
+    /* max-width: 297px !important; */
+    font-size: 16px !important;
+    font-family: 'Nunito Sans', sans-serif !important; /* Apply Nunito Sans font */
+  }
   
   /* Media queries for different screen sizes */
   @media (min-width: 640px) {

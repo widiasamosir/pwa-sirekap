@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Webcam from "react-webcam";
 import './ScannerScreen.css';
 import { ScannerController } from '../../controllers/scannerController';
@@ -17,6 +17,7 @@ const ScannerScreen = () => {
   const [showDialog, setShowDialog] = useState(false);
   const [dialogShown, setDialogShown] = useState(false); // New state to track if the dialog has been shown
   const navigate = useNavigate();
+  const webcamRef = useRef(null); 
 
   useEffect(() => {
     // Show the dialog when the component mounts and if it has not been shown before
@@ -41,7 +42,7 @@ const ScannerScreen = () => {
     { label: "Halaman 2" , value: 2},
     { label: "Halaman 3", value: 3}
   ];
-  const { goToVerificationScreen } = ScannerController();
+  const { goToVerificationScreen } = ScannerController(webcamRef);
 
   const handleNavigateBack = () => {
     localStorage.removeItem(`currentlyScanPage`);
@@ -68,9 +69,10 @@ const ScannerScreen = () => {
             screenshotFormat="image/jpeg"
             videoConstraints={videoConstraints}
             className="webcam-view"
+            ref={webcamRef}
           />
           <footer className="scanner-footer">
-            <button onClick={goToVerificationScreen}>Skip this Scan (Temporary!!!)</button>
+            <button className="action-button-scanner" onClick={goToVerificationScreen}>Pindai Dokumen</button>
             <h2>Petunjuk</h2>
             <p>Scan Form C berlangsung secara otomatis apabila dokumen telah terdeteksi melalui bingkai dokumen. Mohon tunggu hingga proses selesai.</p>
           </footer>
