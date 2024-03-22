@@ -22,7 +22,7 @@ const MainMenuScreen = ({ label, onClick }) => {
 
   const handleLogout = () => {
     localStorage.clear();
-    navigate('/', { replace: true });
+    navigate('/login', { replace: true });
   };
 
   const handleConfirm = () => {

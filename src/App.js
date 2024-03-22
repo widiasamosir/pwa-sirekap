@@ -11,21 +11,24 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
+    
     const token = localStorage.getItem('token');
     setIsLoggedIn(token ? true : false);
+    console.log('isLoggedIn:', isLoggedIn);
   }, []);
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Navigate to="/main-menu" />} />
+        <Route path="/" element={isLoggedIn ? <Navigate to="/main-menu" />: <Navigate to="/login" />} />
         <Route path="/login" element={<LoginScreen />} />
-        <Route
-          path="/main-menu"
-          element={isLoggedIn ? <MainMenuScreen /> : <Navigate to="/login" />}
-        />
+        
         {isLoggedIn && (
           <>
+          <Route
+          path="/main-menu"
+          element={ <MainMenuScreen />}
+        />
             <Route path="/detail-menu" element={<DetailMenuScreen />} />
             <Route path="/scanner" element={<ScannerScreen />} />
             <Route path="/verification" element={<VerificationDataScreen />} />
