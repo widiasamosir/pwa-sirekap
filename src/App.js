@@ -14,7 +14,6 @@ function App() {
     
     const token = localStorage.getItem('token');
     setIsLoggedIn(token ? true : false);
-    console.log('isLoggedIn:', isLoggedIn);
   }, []);
 
   return (
