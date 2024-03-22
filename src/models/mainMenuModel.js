@@ -14,7 +14,7 @@ export const getMenuData = async () => {
   };
 
   export const fetchData = async () => {
-  const BASE_URL = 'http://localhost:7000'
+  const BASE_URL = 'https://0477-223-195-37-240.ngrok-free.app'
   const ENDPOINT = '/tps/v1/search-by-code/';
 
     try {
@@ -24,6 +24,7 @@ export const getMenuData = async () => {
       const response = await fetch(`${BASE_URL}${ENDPOINT}${cachedTpsCode}`, {
         method: 'GET',
         headers: {
+          'ngrok-skip-browser-warning': 'true',
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`
         }
