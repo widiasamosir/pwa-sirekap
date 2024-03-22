@@ -14,7 +14,7 @@
       "type": "image/png"
     }
   ],
-  "start_url": "https://338d-223-195-37-240.ngrok-free.app",
+  "start_url": "/",
   "background_color": "#ffffff",
   "display": "standalone",
   "scope": "/",
